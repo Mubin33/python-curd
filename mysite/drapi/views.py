@@ -30,18 +30,18 @@ class AiquwstModelViewSet(viewsets.ModelViewSet):
 
 
  # if follow step 5(Concrete View class er shahajje CURD kora) then need under line of code or path use
-'''
+
 #  (get all data) (create or post data)
-class Aiquwst_list_create(ListCreateAPIView):
+''' class Aiquwst_list_create(ListCreateAPIView):
     queryset = Aiquest.objects.all()
     serializer_class = AiquestSerializer  
 
 # (get indivitual data) (update or put data) (delete data)
 class Aiquest_up_del(RetrieveUpdateDestroyAPIView):
     queryset = Aiquest.objects.all()
-    serializer_class = AiquestSerializer 
+    serializer_class = AiquestSerializer  '''
         
-'''
+
 
 
 
@@ -53,9 +53,8 @@ class Aiquest_up_del(RetrieveUpdateDestroyAPIView):
 
 
  # if follow step 4(ListModelMixin in Rest er shahajje CURD kora) then need under line of code or path use
-'''
 #  (get all data) (create or post data)
-class Aiquwst_list_create(GenericAPIView, ListModelMixin, CreateModelMixin):
+''' class Aiquwst_list_create(GenericAPIView, ListModelMixin, CreateModelMixin):
     queryset = Aiquest.objects.all()
     serializer_class = AiquestSerializer
 
@@ -83,9 +82,8 @@ class Aiquest_up_del(GenericAPIView,RetrieveModelMixin,UpdateModelMixin,DestroyM
     
 
     def delete(self, request, *args, **kwargs): # DestroyModelMixin in Rest(delete data)
-        return self.destroy( request, *args, **kwargs)
-        
-        '''
+        return self.destroy( request, *args, **kwargs) '''
+ 
 
 
 # or
@@ -95,7 +93,7 @@ class Aiquest_up_del(GenericAPIView,RetrieveModelMixin,UpdateModelMixin,DestroyM
 # if follow step 3(Class Based View APIView er shahajje CURD kora) then need under line of code  
 
 # Class Based View APIView
-'''class AiquestCrearte(APIView):
+''' class AiquestCrearte(APIView):
     # get data
     def get(self, request, pk=None, format=None):
         id=pk
@@ -152,7 +150,7 @@ class Aiquest_up_del(GenericAPIView,RetrieveModelMixin,UpdateModelMixin,DestroyM
         id = pk
         ai = Aiquest.objects.get(pk = id)
         ai.delete() 
-        return  Response({'msg': 'Successfully delete data'})'''
+        return  Response({'msg': 'Successfully delete data'}) '''
 
 
 
@@ -164,7 +162,8 @@ class Aiquest_up_del(GenericAPIView,RetrieveModelMixin,UpdateModelMixin,DestroyM
 # if follow step 2(normaly api view er shahajje CURD kora) then need under line of code  
 
 # API View
-'''@api_view(['GET', 'POST', 'PUT', 'PATCH','DELETE'])
+'''
+@api_view(['GET', 'POST', 'PUT', 'PATCH','DELETE'])
 def aiquest_create(request, pk=None):
     # get data all or id 
     if request.method == 'GET':
@@ -183,7 +182,7 @@ def aiquest_create(request, pk=None):
         return Response(serializer.data)
     
 
-    post data 
+    # post data 
     if request.method == 'POST':
         serializer = AiquestSerializer(data=request.data)
         if serializer.is_valid():
@@ -192,7 +191,7 @@ def aiquest_create(request, pk=None):
         return Response(serializer.errors)
     
 
-    put data (fulll data change)
+    # put data (fulll data change)
     if request.method == 'PUT':
         id = pk
         ai = Aiquest.objects.get(pk = id)
@@ -203,7 +202,7 @@ def aiquest_create(request, pk=None):
         return Response(serializer.errors)
     
 
-    Patch data ( data change)
+    # Patch data ( data change)
     if request.method == 'PATCH':
         id = pk
         ai = Aiquest.objects.get(pk = id)
@@ -215,12 +214,13 @@ def aiquest_create(request, pk=None):
     
 
 
-    delete data 
+    # delete data 
     if request.method == 'DELETE':
         id = pk
         ai = Aiquest.objects.get(pk = id)
         ai.delete() 
-        return  Response({'msg': 'Successfully delete data'})'''
+        return  Response({'msg': 'Successfully delete data'}) 
+        '''
 
 
 

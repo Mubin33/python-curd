@@ -18,6 +18,7 @@ class AiquestSerializer(serializers.ModelSerializer):
 
 # nomal serializer diye korle nicer code gulolagbe. r modelserializer diye korle uporer just koyek line code lagbe shudu
 # if follow step 1(normaly CURD kora) then need under line of code  
+
 '''class AiquestSerializer(serializers.Serializer):
     teachers_name = serializers.CharField(max_length=25)
     course_name = serializers.CharField(max_length=25)
@@ -33,4 +34,4 @@ class AiquestSerializer(serializers.ModelSerializer):
         instance.course_duration = validated_data.get('course_duration', instance.course_duration)
         instance.sit = validated_data.get('sit', instance.sit)
         instance.save()
-        return instance'''
+        return instance '''
