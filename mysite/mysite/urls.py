@@ -47,5 +47,6 @@ urlpatterns = [
     
     # if follow step 1(normaly CURD kora) then need under line of code or path use
     # path('aiinfo/', views.aiquest_info),
+    #  path('aiinfo/create/', views.aiquest_create, name='aiquest-create'), 
     # path('aiinfo/<int:pk>', views.aiquest_info_per_data), #api view hole eita lagbe na
 ]
